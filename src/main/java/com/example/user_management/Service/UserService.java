@@ -1,7 +1,6 @@
-package com.example.user_management.Service.impl;
+package com.example.user_management.Service;
 import com.example.user_management.Model.User;// Imports the User model, which is the data type this service will manage.
 import com.example.user_management.Repository.UserRepository;//  Imports UserRepository, which provides methods to interact with the database.
-import com.example.user_management.Service.UserInterface;
 import org.springframework.beans.factory.annotation.Autowired;// Imports @Autowired, an annotation used for dependency injection.
 import org.springframework.stereotype.Service;
 
@@ -11,11 +10,11 @@ import java.util.List;
 // This annotation indicates that UserService is a service component,
 // typically used to encapsulate business logic and interact with repositories.
 @Service
-public class UserServiceImpl implements UserInterface {
+public class UserService {
     private final UserRepository userRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository){
+    public UserService(UserRepository userRepository){
         this.userRepository = userRepository;
     }
 
