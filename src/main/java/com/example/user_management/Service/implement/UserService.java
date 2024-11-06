@@ -33,9 +33,9 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public User createUser(User user){
-       if(userRepository.findByEmail(user.getEmail()).isPresent()){
-           throw new IllegalArgumentException("User with this email already exists");
-       }
+        if(userRepository.findByEmail(user.getEmail()).isPresent()){
+            throw new IllegalArgumentException("User with this email already exists");
+        }
         return userRepository.save(user);
     }
 
@@ -50,11 +50,11 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public String deleteUser(Long id){
-       if(userRepository.existsById(id)){
-           userRepository.deleteById(id);
-           return "User deleted successfully";
-       } else {
-           throw new IllegalArgumentException("User with id" + id +" not found");
-       }
+        if(userRepository.existsById(id)){
+            userRepository.deleteById(id);
+            return "User deleted successfully";
+        } else {
+            throw new IllegalArgumentException("User with id" + id +" not found");
+        }
     }
 }
